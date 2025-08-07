@@ -1,0 +1,15 @@
+{
+  "name": "nagari-kajai-website",
+  "version": "1.0.0",
+  "description": "Website for Nagari Kajai, built with Handlebars, pure CSS, and JavaScript.",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2"
+  },
+  "author": "Faiz",
+  "license": "ISC"
+}
