@@ -127,7 +127,7 @@ section {
   text-align: center;
   color: white;
   position: relative;
-  background-image: linear-gradient(rgba(139, 21, 56, 0.3), rgba(45, 90, 61, 0.3)), url('/images/gunung_talamau.jpg');
+  background-image: linear-gradient(rgba(139, 21, 56, 0.3), rgba(45, 90, 61, 0.3)), url('/images/talamau_2.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -415,11 +415,11 @@ section {
   border-radius: 0.75rem;
   text-align: center;
   transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .card:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(18, 18, 18, 0.2);
     transform: translateY(-0.5rem) scale(1.05);
 }
 
@@ -431,11 +431,11 @@ section {
 .card-title {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: white;
+  color: rgb(26, 24, 24);
 }
 
 .card-description {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(20, 19, 19, 0.9);
 }
 
 /* Matrilineal System */
@@ -624,29 +624,52 @@ section {
     margin-bottom: 0.5rem;
 }
 
-/* Footer */
+/* ================================================= */
+/* ATURAN PERBAIKAN - Tambahkan atau ganti dengan ini */
+/* ================================================= */
+
+/* Mengubah warna semua teks di dalam kartu menjadi hitam */
+.challenge-card, .challenge-card p {
+    color: #000 !important;
+}
+
+/* Mengubah warna judul kartu (h3) menjadi hitam */
+.challenge-card .card-title {
+    color: #000 !important;
+}
+
+/* Mengubah warna ikon (svg) menjadi hitam */
+.challenge-card .card-header .lucide {
+    stroke: #000 !important; /* Untuk ikon SVG, kita ubah 'stroke' */
+}
+/* ================== FOOTER ================== */
 footer {
-    background-color: var(--minang-maroon);
-    color: white;
-    padding: 4rem 0 2rem;
+    background-color: #06dbf8; /* Warna biru terang (cyan-light) */
+    color: #333333; /* Warna teks utama menjadi gelap */
+    padding: 4rem 1rem 2rem;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr; /* Default satu kolom untuk mobile */
+    gap: 2.5rem;
     margin-bottom: 3rem;
 }
 
+/* Layout untuk desktop dan tablet (lebar > 768px) */
 @media (min-width: 768px) {
     .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr;
+        /* Mengatur proporsi kolom agar seimbang */
+        grid-template-columns: 2fr 1.5fr 1.5fr; 
+        /* Memastikan semua kolom rata di bagian atas */
+        align-items: start; 
+        gap: 2.5rem;
     }
 }
 
+/* Bagian Tentang */
 .footer-about .logo {
     margin-bottom: 1.5rem;
-    color: var(--minang-gold);
     align-items: flex-start;
     text-align: left;
 }
@@ -654,54 +677,90 @@ footer {
 .site-info h3 {
     color: var(--minang-gold);
     font-size: 1.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .site-info p {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(9, 9, 9, 0.8);
 }
 
-.footer-about p {
-    color: rgba(255, 255, 255, 0.9);
+.footer-about > p {
+    color: rgba(6, 5, 5, 0.9);
+    line-height: 1.6;
 }
 
-.footer-location, .footer-contact {
-    font-size: 0.875rem;
-}
-
-.footer-location h4, .footer-contact h4 {
+/* Bagian Lokasi */
+.footer-location h4 {
     color: var(--minang-gold);
     font-size: 1.125rem;
     margin-bottom: 1.5rem;
 }
 
-.footer-location p, .footer-contact p {
+.footer-location p {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
+/* Bagian Sosial Media */
+.footer-social {
+  
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Jarak antara link Instagram dan TikTok */
+}
+
+.footer-social h4 {
+    color: var(--minang-gold);
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(9, 9, 9, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    color: var(--minang-gold);
+}
+
+.social-link svg {
+    flex-shrink: 0; /* Mencegah ikon mengecil jika teks panjang */
+}
+
+.social-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: cover; /* Menjaga gambar tidak gepeng */
+}
+
+/* Bagian Bawah Footer */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 .footer-bottom p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(8, 8, 8, 0.8);
     font-size: 0.875rem;
-    margin-bottom: 1rem;
 }
 
-.footer-social a {
-    color: rgba(255, 255, 255, 0.8);
-    transition: color 0.3s ease-in-out;
+/* Penyesuaian untuk dua logo di navigasi */
+.logo {
+  gap: 0.75rem; /* Menambah jarak antar logo dan teks */
 }
 
-.footer-social a:hover {
-    color: var(--minang-gold);
+.logo .nav-logo-img {
+  height: 28px; /* Menyesuaikan tinggi logo baru, bisa diubah sesuai kebutuhan */
+  width: auto;
 }
